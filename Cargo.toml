@@ -1,0 +1,16 @@
+[package]
+name = "aoc-2020"
+version = "0.1.0"
+authors = ["srm <srm@bouh.org>"]
+edition = "2018"
+
+[dependencies]
+regex = "1"
+lazy_static = "1.4.0"
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "day5"
+harness = false
