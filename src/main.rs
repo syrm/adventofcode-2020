@@ -9,17 +9,35 @@ use std::path::Path;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let default = day5;
+    let default = day1;
 
     match &args.get(1) {
         None => default(),
         Some(arg) => match arg.parse() {
+            Ok(1) => day1(),
             Ok(2) => day2(),
             Ok(3) => day3(),
             Ok(4) => day4(),
+            Ok(5) => day5(),
+            Ok(6) => day6(),
             _ => default()
         }
     }
+}
+
+fn day1() {
+    let input = day1::get_input(Path::new("input/day1.txt"));
+    let answer1 = day1::solve_part1(input);
+
+    println!("Day 1");
+    println!("Part 1 answer is {}", answer1);
+    assert_eq!(440979, answer1);
+
+    let input = day1::get_input(Path::new("input/day1.txt"));
+    let answer2 = day1::solve_part2(input);
+
+    println!("Part 2 answer is {}", answer2);
+    assert_eq!(82498112, answer2);
 }
 
 fn day2() {
@@ -69,4 +87,16 @@ fn day5() {
     assert_eq!(989, answer1);
     println!("Part 2 answer is {}", answer2);
     assert_eq!(548, answer2);
+}
+
+fn day6() {
+    let input = day6::get_input(Path::new("input/day6.txt")).unwrap();
+    let answer1 = day6::solve_part1(&input);
+    let answer2 = day6::solve_part2(&input);
+
+    println!("Day 5");
+    println!("Part 1 answer is {}", answer1);
+    assert_eq!(6457, answer1);
+    println!("Part 2 answer is {}", answer2);
+    assert_eq!(3260, answer2);
 }

@@ -2,6 +2,7 @@ use std::io::Error;
 use std::result::Result;
 use regex::Regex;
 use std::path::Path;
+use crate::lib::common;
 
 #[derive(Debug)]
 pub struct PasswordPolicy {
@@ -9,8 +10,6 @@ pub struct PasswordPolicy {
     criterion1: i8,
     criterion2: i8
 }
-
-#[path = "common.rs"] mod common;
 
 #[inline]
 pub fn solve_part1(passwords: &Vec<(PasswordPolicy, String)>) -> i32 {
@@ -52,7 +51,7 @@ pub fn get_input(filename: &Path) -> Result<Vec<(PasswordPolicy, String)>, Error
     let mut passwords: Vec<(PasswordPolicy, String)> = Vec::new();
 
     for line in result_lines? {
-        parse_line(line).and_then(|password| Some(passwords.push(password))); // @TODO Pourquoi je dois mettre Some ?
+        parse_line(line).and_then(|password| Some(passwords.push(password))); // @TODO Why should i put Some ?
     }
 
     Ok(passwords)

@@ -2,10 +2,11 @@ use std::collections::HashMap;
 use std::io::Error;
 use regex::Regex;
 use std::path::Path;
-
-#[path = "common.rs"] mod common;
+use crate::lib::common;
 
 type Passport = HashMap<String, String>;
+
+// @TODO Try an actor solution
 
 #[inline]
 pub fn solve_part1(passports: &Vec<Passport>) -> u16 {

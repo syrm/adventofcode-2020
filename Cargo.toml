@@ -12,5 +12,5 @@ lazy_static = "1.4.0"
 criterion = "0.3"
 
 [[bench]]
-name = "day5"
+name = "day1"
 harness = false

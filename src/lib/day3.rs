@@ -1,7 +1,6 @@
 use std::io::Error;
 use std::path::Path;
-
-#[path = "common.rs"] mod common;
+use crate::lib::common;
 
 #[inline]
 pub fn solve_part1(area: &Vec<Vec<u8>>) -> u16 {
