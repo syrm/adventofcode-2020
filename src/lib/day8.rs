@@ -80,9 +80,10 @@ pub fn solve_part2(code: &Vec<Instruction>) -> isize {
                     }
                 },
                 Instruction { operation: Operation::Nop, argument } => {
-                    let new_index = (index as isize + argument - 1) as usize;
+                    let increment = index as isize + argument - 1;
+                    let new_index = increment as usize;
 
-                    if patched || patchs_tried.contains_key(&index) {
+                    if patched || patchs_tried.contains_key(&index) || new_index == index || increment < 0 {
                         // nop
                     } else {
                         patchs_tried.insert(index, 1);
