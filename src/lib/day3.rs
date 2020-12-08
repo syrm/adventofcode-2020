@@ -1,6 +1,6 @@
 use std::io::Error;
 use std::path::Path;
-use crate::lib::common;
+use super::common;
 
 #[inline]
 pub fn solve_part1(area: &Vec<Vec<u8>>) -> u16 {

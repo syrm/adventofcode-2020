@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate lazy_static;
 #[path = "../src/lib/day4.rs"] mod day4;
+#[path = "../src/lib/common.rs"] mod common;
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use std::path::Path;

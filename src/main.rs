@@ -9,7 +9,7 @@ use std::path::Path;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let default = day1;
+    let default = day8;
 
     match &args.get(1) {
         None => default(),
@@ -20,6 +20,7 @@ fn main() {
             Ok(4) => day4(),
             Ok(5) => day5(),
             Ok(6) => day6(),
+            Ok(8) => day8(),
             _ => default()
         }
     }
@@ -94,9 +95,21 @@ fn day6() {
     let answer1 = day6::solve_part1(&input);
     let answer2 = day6::solve_part2(&input);
 
-    println!("Day 5");
+    println!("Day 6");
     println!("Part 1 answer is {}", answer1);
     assert_eq!(6457, answer1);
     println!("Part 2 answer is {}", answer2);
     assert_eq!(3260, answer2);
+}
+
+fn day8() {
+    let input = day8::get_input(Path::new("input/day8.txt")).unwrap();
+    let answer1 = day8::solve_part1(&input);
+    let answer2 = day8::solve_part2(&input);
+
+    println!("Day 8");
+    println!("Part 1 answer is {}", answer1);
+    assert_eq!(1928, answer1);
+    println!("Part 2 answer is {}", answer2);
+    assert_eq!(1319, answer2);
 }

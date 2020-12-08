@@ -1,7 +1,7 @@
 use std::io::Error;
 use std::path::Path;
 use std::collections::{HashSet, HashMap};
-use crate::lib::common;
+use super::common;
 
 #[inline]
 pub fn solve_part1(groups: &Vec<Vec<String>>) -> u16 {

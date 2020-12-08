@@ -2,7 +2,7 @@ use std::io::Error;
 use std::result::Result;
 use regex::Regex;
 use std::path::Path;
-use crate::lib::common;
+use super::common;
 
 #[derive(Debug)]
 pub struct PasswordPolicy {
