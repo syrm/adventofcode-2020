@@ -20,9 +20,10 @@ fn main() {
             Ok(4) => day4(),
             Ok(5) => day5(),
             Ok(6) => day6(),
+            Ok(7) => day7(),
             Ok(8) => day8(),
-            _ => default()
-        }
+            _ => default(),
+        },
     }
 }
 
@@ -54,16 +55,20 @@ fn day3() {
 
     println!("Day 3");
     println!("Part 1 answer is {}", day3::solve_part1(&input));
-    println!("Part 2 answer is {}", day3::solve_part2(
-        &input,
-        &[
-            [1, 1].to_vec(),
-            [3, 1].to_vec(),
-            [5, 1].to_vec(),
-            [7, 1].to_vec(),
-            [1, 2].to_vec()
-        ].to_vec()
-    ));
+    println!(
+        "Part 2 answer is {}",
+        day3::solve_part2(
+            &input,
+            &[
+                [1, 1].to_vec(),
+                [3, 1].to_vec(),
+                [5, 1].to_vec(),
+                [7, 1].to_vec(),
+                [1, 2].to_vec()
+            ]
+            .to_vec()
+        )
+    );
 }
 
 fn day4() {
@@ -100,6 +105,18 @@ fn day6() {
     assert_eq!(6457, answer1);
     println!("Part 2 answer is {}", answer2);
     assert_eq!(3260, answer2);
+}
+
+fn day7() {
+    let input = day7::get_input(Path::new("input/day7.txt"));
+    let answer1 = day7::solve_part1(&input, "shiny gold".to_string());
+    let answer2 = day7::solve_part2(&input, "shiny gold".to_string());
+
+    println!("Day 7");
+    println!("Part 1 answer is {}", answer1);
+    assert_eq!(121, answer1);
+    println!("Part 2 answer is {}", answer2);
+    assert_eq!(3805, answer2);
 }
 
 fn day8() {
